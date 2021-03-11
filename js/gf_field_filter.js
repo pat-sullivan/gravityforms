@@ -15,7 +15,7 @@
             .html('<div id="gform-field-filters"></div>');
         height = h;
         isResizable = typeof height != 'undefined' && height > 0;
-        operatorStrings = {"is":"is","isnot":"isNot", ">":"greaterThan", "<":"lessThan", "contains":"contains", "starts_with":"startsWith", "ends_with":"endsWith"};
+        operatorStrings = {"is":"is","isnot":"isNot", ">":"greaterThan", "<":"lessThan", "contains":"contains", "ncontains":"nContains", "starts_with":"startsWith", "ends_with":"endsWith"};
         imagesURL = gf_vars.baseUrl + "/images";
         settings = s;
         filters = initVars && initVars.filters ? initVars.filters : [];

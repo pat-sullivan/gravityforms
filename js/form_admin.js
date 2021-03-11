@@ -153,7 +153,7 @@ function CreateConditionalLogic(objectType, obj){
 
 function GetRuleOperators( objectType, i, fieldId, selectedOperator ) {
     var str, supportedOperators, operators, selected;
-    supportedOperators = {"is":"is","isnot":"isNot", ">":"greaterThan", "<":"lessThan", "contains":"contains", "starts_with":"startsWith", "ends_with":"endsWith"};
+    supportedOperators = {"is":"is","isnot":"isNot", ">":"greaterThan", "<":"lessThan", "contains":"contains", "ncontains": "nContains", "starts_with":"startsWith", "ends_with":"endsWith"};
     str = "<select id='" + objectType + "_rule_operator_" + i + "' class='gfield_rule_select' onchange='SetRuleProperty(\"" + objectType + "\", " + i + ", \"operator\", jQuery(this).val());var valueSelector=\"#" + objectType + "_rule_value_" + i + "\"; jQuery(valueSelector).replaceWith(GetRuleValues(\"" + objectType + "\", " + i + ",\"" + fieldId + "\", \"\"));jQuery(valueSelector).change();'>";
     operators = IsEntryMeta(fieldId) ? GetOperatorsForMeta(supportedOperators, fieldId) : supportedOperators;
 
@@ -1586,6 +1586,15 @@ var gfMergeTagsObj = function( form, element ) {
 		return string.indexOf( value ) === 0;
 
 	};
+
+  /**
+  * Check if a string does not contain a specific value
+  */
+  self.nContains = function( string, value ) {
+
+    return string.indexOf( value ) < 0;
+
+  };
 
 	// If element is defined, initialize.
 	if ( self.elem ) {

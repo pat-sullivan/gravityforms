@@ -337,6 +337,7 @@ Class GFNotification {
 				var greaterThanSelected = routings[i].operator == '>' ? "selected='selected'" : '';
 				var lessThanSelected = routings[i].operator == '<' ? "selected='selected'" : '';
 				var containsSelected = routings[i].operator == 'contains' ? "selected='selected'" : '';
+        var nContainsSelected = routings[i].operator == 'ncontains' ? "selected='selected'" : '';
 				var startsWithSelected = routings[i].operator == 'starts_with' ? "selected='selected'" : '';
 				var endsWithSelected = routings[i].operator == 'ends_with' ? "selected='selected'" : '';
 				var email = routings[i]["email"] ? routings[i]["email"] : '';
@@ -349,6 +350,7 @@ Class GFNotification {
 				str += "<option value='>' " + greaterThanSelected + ">" + <?php echo json_encode( esc_html__( 'greater than', 'gravityforms' ) ); ?> + "</option>";
 				str += "<option value='<' " + lessThanSelected + ">" + <?php echo json_encode( esc_html__( 'less than', 'gravityforms' ) ); ?> + "</option>";
 				str += "<option value='contains' " + containsSelected + ">" + <?php echo json_encode( esc_html__( 'contains', 'gravityforms' ) ); ?> + "</option>";
+        str += "<option value='ncontains' " + nContainsSelected + ">" + <?php echo json_encode( esc_html__( 'does not contain', 'gravityforms' ) ); ?> + "</option>";
 				str += "<option value='starts_with' " + startsWithSelected + ">" + <?php echo json_encode( esc_html__( 'starts with', 'gravityforms' ) ); ?> + "</option>";
 				str += "<option value='ends_with' " + endsWithSelected + ">" + <?php echo json_encode( esc_html__( 'ends with', 'gravityforms' ) ); ?> + "</option>";
 				str += "</select>&nbsp;";
@@ -951,6 +953,7 @@ Class GFNotification {
 									<option value=">" <?php echo rgar( $routing, 'operator' ) == '>' ? "selected='selected'" : '' ?>><?php esc_html_e( 'greater than', 'gravityforms' ) ?></option>
 									<option value="<" <?php echo rgar( $routing, 'operator' ) == '<' ? "selected='selected'" : '' ?>><?php esc_html_e( 'less than', 'gravityforms' ) ?></option>
 									<option value="contains" <?php echo rgar( $routing, 'operator' ) == 'contains' ? "selected='selected'" : '' ?>><?php esc_html_e( 'contains', 'gravityforms' ) ?></option>
+                  <option value="ncontains" <?php echo rgar( $routing, 'operator' ) == 'ncontains' ? "selected='selected'" : '' ?>><?php esc_html_e( 'does not contain', 'gravityforms' ) ?></option>
 									<option value="starts_with" <?php echo rgar( $routing, 'operator' ) == 'starts_with' ? "selected='selected'" : '' ?>><?php esc_html_e( 'starts with', 'gravityforms' ) ?></option>
 									<option value="ends_with" <?php echo rgar( $routing, 'operator' ) == 'ends_with' ? "selected='selected'" : '' ?>><?php esc_html_e( 'ends with', 'gravityforms' ) ?></option>
 								</select>

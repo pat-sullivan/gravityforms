@@ -1653,7 +1653,7 @@ class GF_Forms_Model_Legacy {
 	 * @return bool true if a valid operator, false if not.
 	 */
 	public static function is_valid_operator( $operator ) {
-		$operators = array( 'is', 'isnot', '<>', 'not in', 'in', '>', '<', 'contains', 'starts_with', 'ends_with', 'like', '>=', '<=' );
+		$operators = array( 'is', 'isnot', '<>', 'not in', 'in', '>', '<', 'contains', 'ncontains', 'starts_with', 'ends_with', 'like', '>=', '<=' );
 		$is_valid = in_array( strtolower( $operator ), $operators );
 		/**
 		 * Filter which checks whether the operator is valid.
