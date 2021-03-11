@@ -2306,7 +2306,7 @@ class GFForms {
 		$min      = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
 
 		wp_register_script( 'gform_chosen', $base_url . "/js/chosen.jquery.min.js", array( 'jquery' ), $version );
-		wp_register_script( 'gform_conditional_logic', $base_url . "/js/conditional_logic.js", array(
+		wp_register_script( 'gform_conditional_logic', $base_url . "/js/conditional_logic{$min}.js", array(
 			'jquery',
 			'gform_gravityforms'
 		), $version );
@@ -2316,7 +2316,7 @@ class GFForms {
 			'gform_gravityforms'
 		), $version, true );
 		wp_register_script( 'gform_floatmenu', $base_url . "/js/floatmenu_init{$min}.js", array( 'jquery' ), $version );
-		wp_register_script( 'gform_form_admin', $base_url . "/js/form_admin.js", array(
+		wp_register_script( 'gform_form_admin', $base_url . "/js/form_admin{$min}.js", array(
 			'jquery',
 			'jquery-ui-autocomplete',
 			'gform_placeholder',
@@ -2338,7 +2338,7 @@ class GFForms {
 		wp_register_script( 'gform_placeholder', $base_url . '/js/placeholders.jquery.min.js', array( 'jquery' ), $version );
 		wp_register_script( 'gform_tooltip_init', $base_url . "/js/tooltip_init{$min}.js", array( 'jquery-ui-tooltip' ), $version );
 		wp_register_script( 'gform_textarea_counter', $base_url . "/js/jquery.textareaCounter.plugin{$min}.js", array( 'jquery' ), $version );
-		wp_register_script( 'gform_field_filter', $base_url . "/js/gf_field_filter.js", array(
+		wp_register_script( 'gform_field_filter', $base_url . "/js/gf_field_filter{$min}.js", array(
 			'jquery',
 			'gform_datepicker_init'
 		), $version );
